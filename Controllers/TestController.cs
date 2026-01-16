@@ -104,6 +104,8 @@ public class TestController : ControllerBase
                     Name = reader.GetString(1)
                 });
             }
+
+            throw new Exception();
             return Ok(projects);
         }
         catch (PostgresException ex) when (ex.SqlState == "42P01") // Table does not exist
